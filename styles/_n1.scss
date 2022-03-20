@@ -1,0 +1,31 @@
+$comida: red;
+@mixin space($top: 0, $left: 0, $right: 0, $bottom: 0) {
+  margin-top: $top;
+  margin-left: $left;
+  margin-right: $right;
+  margin-bottom: $bottom;
+}
+@mixin container() {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@mixin flex() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@mixin grid($min: 300px, $row: 300px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+  grid-template-rows: repeat(auto-fit, $row);
+}
+@mixin h-p() {
+  h2 {
+    @include space($top: 50px);
+    font-size: $fs-t;
+  }
+  p {
+    font-size: $fs-p;
+  }
+}

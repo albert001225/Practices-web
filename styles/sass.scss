@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+$c-w: white;
+$fs-t: 20px;
+$fs-p: 11px;
+
+@import "n1";
+@import "n2";
+
+.container {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  @include container();
+  .up {
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    border-radius: 1;
+    overflow: hidden;
+
+    .img {
+      z-index: -1;
+      width: 100%;
+      position: absolute;
+      height: auto;
+      object-fit: cover;
+      bottom: 0;
+    }
+    h1 {
+      font-size: $fs-t;
+      color: $c-w;
+      @include space($top: 30px, $left: 30px);
+    }
+    p {
+      @include space($top: 10px, $left: 30px, $bottom: 20px);
+      font-size: $fs-p;
+      color: $c-w;
+    }
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  .up-mid {
+    @include container();
+
+    h2 {
+      @include space($top: 50px);
+      font-size: $fs-t;
+    }
+    p {
+      font-size: $fs-p;
+      @include space($top: 10px, $bottom: 25px);
+    }
+  }
+  .mid {
+    @include grid();
+    gap: 10px;
+    .caja {
+      @include flex();
+      h3 {
+        margin-bottom: 15px;
+      }
+      p {
+        margin-top: 15px;
+      }
+      img {
+        width: 27vw;
+      }
+    }
+  }
+  .mid-down {
+    @include h-p();
+    margin-top: 100px;
+    margin-bottom: 20px;
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
+  .down-start {
+    background-color: cadetblue;
+    width: 100%;
+
+    .head {
+      display: flex;
+      border-bottom: 1px solid black;
+      height: 30px;
+
+      ._title {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .down {
+      @include grid($min: 200px, $row: 300x);
+      gap: 10px;
+      .caj {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+
+        div {
+          height: 300px;
+          display: flex;
+
+          justify-content: center;
+          align-items: center;
+          @include flex();
+          gap: 10px;
+
+          h5,
+          p {
+            width: 250px;
+            height: 200px;
+          }
+          img {
+            width: 200px;
+            height: 140px;
+          }
+        }
+      }
+    }
+    .head-end {
+      display: flex;
+      border-top: 1px solid black;
+      height: 30px;
+      justify-content: flex-end;
+      ._title-end {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
